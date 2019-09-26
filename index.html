@@ -22,16 +22,35 @@ layout: default
 
 <div class="container is-wide">
     <div class="columns">
-        <div class="column is-3">
-            <div class="directory-filter">
+        <div class="column is-3-xl is-4-lg is-6-md">
 
-                <div class="directory-logo">
+            <div class="sidebar is-sticky">
+
+                <div class="logo is-nonselectable">
                     <img src="/assets/images/fromrmit_logo_red.svg">
-
                     <p class="is-size-7">RMIT Vietnam Design and Media Student Directory</p>
                 </div>
 
-                <div class="directory-filter-categories is-nonselectable has-paragraphs">
+                <div class="homepage-featured has-paragraphs">
+
+                    <h6 class="has-text-smallcaps">Latest Featured</h6>
+
+                    <div class="card is-horizontal">
+                        <div class="card-media">
+                            <figure class="image is-full is-cover">
+                                <img src="https://via.placeholder.com/500" alt="{{ featured.title }}">
+                            </figure>
+                        </div>
+                        <div class="card-body has-paragraphs">
+                            <h5>Erat ipsum accusam diam sea nonumy</h5>
+                            <p>Dolor ut invidunt nonumy amet et vero. Sanctus est justo lorem tempor duo duo dolor ...
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="directory-filter directory-filter-categories is-nonselectable has-paragraphs">
 
                     <h6 class="has-text-smallcaps">Filter</h6>
 
@@ -106,7 +125,7 @@ layout: default
 
                 </div>
 
-                <div class="directory-filter-graduated has-paragraphs">
+                <div class="directory-filter directory-filter-graduated is-nonselectable has-paragraphs">
 
                     <h6 class="has-text-smallcaps">Graduation Year</h6>
 
@@ -114,25 +133,25 @@ layout: default
                         <div class="control">
                             <label class="checkbox">
                                 <input type="checkbox" rel="is-current-student">
-                                <span>Current Student</span>
+                                <span>📝 Current Student</span>
                             </label>
                         </div>
                         <div class="control">
                             <label class="checkbox">
                                 <input type="checkbox" rel="is-graduated-2019">
-                                <span>2019</span>
+                                <span>🎓 2019</span>
                             </label>
                         </div>
                         <div class="control">
                             <label class="checkbox">
                                 <input type="checkbox" rel="is-graduated-2018">
-                                <span>2018</span>
+                                <span>🎓 2018</span>
                             </label>
                         </div>
                         <div class="control">
                             <label class="checkbox">
                                 <input type="checkbox" rel="is-graduated-2017">
-                                <span>2017</span>
+                                <span>🎓 2017</span>
                             </label>
                         </div>
                     </div>
@@ -142,9 +161,11 @@ layout: default
         </div>
         <div class="column">
             <div class="directory-wrapper">
-                {% assign directory = site.profiles | sort: 'date' | reverse %}
+
+                {% assign directory = site.profiles | reverse %}
                 {% for profile in directory %}
-                <div class="card directory-item">
+                <div
+                    class="card directory-item is-{{ profile.categories | join: '_is-' | replace: ' ', '-' | replace: '_', ' ' | downcase }} is-{% if profile.graduated %}{{ profile.graduated }}{% else %}current-student{% endif %}">
                     <div class="card-head">
                         <div class="directory-item-image">
                             <figure class="image is-full is-cover">
@@ -164,10 +185,6 @@ layout: default
                             <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
                             <span>{{ profile.current_location }}</span>
                         </p>
-                        <p class="directory-item-website is-size-7 has-text-darkgray">
-                            <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                            <span><a href="https://haiphan.design/">haiphan.design</a></span>
-                        </p>
                         <p class="directory-item-bio">{{ profile.excerpt | strip_html | truncatewords:20 }}</p>
                         <ul class="directory-item-occupations">
                             <li>{{ profile.categories | join: '</li><li>'}}</li>
@@ -179,16 +196,24 @@ layout: default
                             <a href="{{ profile.link_site }}"><i class="fas fa-globe"></i></a>
                             {% endif %}
                             {% if profile.link_facebook %}
-                            <a href="{{ profile.link_facebook }}"><i class="fab fa-facebook"></i></a>
+                            <a href="https://facebook.com/{{ profile.link_facebook }}">
+                                <i class="fab fa-facebook"></i>
+                            </a>
                             {% endif %}
                             {% if profile.link_twitter %}
-                            <a href="{{ profile.link_twitter }}"><i class="fab fa-twitter"></i></a>
+                            <a href="https://twitter.com/{{ profile.link_twitter }}">
+                                <i class="fab fa-twitter"></i>
+                            </a>
                             {% endif %}
                             {% if profile.link_instagram %}
-                            <a href="{{ profile.link_instagram }}"><i class="fab fa-instagram"></i></a>
+                            <a href="https://instagram.com/{{ profile.link_instagram }}">
+                                <i class="fab fa-instagram"></i>
+                            </a>
                             {% endif %}
                             {% if profile.link_behance %}
-                            <a href="{{ profile.link_behance }}"><i class="fab fa-behance"></i></a>
+                            <a href="https://behance.net/{{ profile.link_behance }}">
+                                <i class="fab fa-behance"></i>
+                            </a>
                             {% endif %}
                         </div>
                     </div>

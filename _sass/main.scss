@@ -22,6 +22,45 @@
 }
 
 
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--white);
+    @include border;
+    border-radius: var(--border-radius);
+
+    .card-media {
+        display: flex;
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    &.is-horizontal {
+        flex-direction: row;
+
+        .card-media {
+            width: calc(100% / 3);
+        }
+    }
+}
+
+.column {
+    &.is-3-lg {
+        @include breakpoint(lg) {
+            flex: none;
+            width: calc(100% / 12 * 3);
+        }
+    }
+}
+
+
+
 .grid-background {
     position: fixed;
     top: 0;
@@ -67,36 +106,40 @@
     }
 }
 
-.directory-filter {
-    position: sticky;
-    top: 0;
-
+.sidebar {
     display: grid;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
 
-    @include breakpoint(md) {
-        grid-gap: 3rem;
+    &.is-sticky {
+        top: 0;
     }
 
-    .directory-logo {
+    .logo {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
+
         img {
             width: 18rem;
-            margin: 1.5rem 0 .5rem;
+            margin-bottom: .5rem;
+        }
 
-            @include breakpoint(md) {
-                margin: 6rem 0 .5rem;
-            }
+        @include breakpoint(md) {
+            margin-top: 9rem;
+            margin-bottom: 3rem;
         }
     }
 
-    .directory-filter-categories {
-        padding: 1rem 0 0;
-
-        @include breakpoint(sm) {
-            width: 90%;
-        }
+    @include breakpoint(sm) {
+        width: 90%;
     }
 
+    @include breakpoint(md) {
+        max-height: 100vh;
+        overflow: auto;
+    }
+}
+
+.directory-filter {
     .control {
         display: inline-flex;
         margin-bottom: .5rem;
@@ -132,8 +175,6 @@
             }
         }
     }
-
-
 }
 
 
@@ -146,7 +187,7 @@
     padding-bottom: 1em;
 
     @include breakpoint(md) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: 1.5rem;
 
         padding-top: 6rem;
@@ -154,16 +195,17 @@
     }
 
     @include breakpoint(lg) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 .directory-item {
     display: flex;
     flex-direction: column;
-    background-color: var(--white);
-    @include border;
-    border-radius: 5px;
     overflow: hidden;
 
     .card-body {

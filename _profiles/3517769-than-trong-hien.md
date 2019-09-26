@@ -7,8 +7,8 @@ categories:
     - Animator
     - Illustrator
 current_location: HCMC, VN
-link_site: https://haiphan.design/
-link_instagram: haiphan.design
+link_site: https://yuureistudio.com/
+link_instagram: thantrong.hien
 ---
 
 Vero justo stet kasd amet nonumy et amet, sit amet clita eirmod ea, dolores sadipscing accusam stet sadipscing accusam consetetur.

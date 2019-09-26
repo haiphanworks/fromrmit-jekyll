@@ -3,9 +3,9 @@
 //// SCREEN SIZE
 $viewport-xs: 575px;
 $viewport-sm: 576px;
-$viewport-md: 768px;
-$viewport-lg: 992px;
-$viewport-xl: 1200px;
+$viewport-md: 769px;
+$viewport-lg: 1024px;
+$viewport-xl: 1408px;
 
 @mixin breakpoint($class) {
     @if $class==xs {
