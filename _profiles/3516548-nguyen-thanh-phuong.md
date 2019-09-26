@@ -5,6 +5,7 @@ description: Visual identities and product packaging for a gentle, delicate and 
 categories:
     - Graphic Designer
     - Animator
+    - Illustrator
 current_location: HCMC, VN
 link_site: https://haiphan.design/
 link_twitter: haiphan.design

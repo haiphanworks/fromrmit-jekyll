@@ -5,6 +5,8 @@ description: Visual identities and product packaging for a gentle, delicate and 
 categories:
     - Graphic Designer
     - Animator
+    - Illustrator
+graduated: 2018
 current_location: Melbourne, AU
 link_site: https://haiphan.design/
 link_twitter: haiphan.design

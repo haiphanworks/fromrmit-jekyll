@@ -6,6 +6,7 @@ categories:
     - Graphic Designer
     - Art Director
     - Freelancer
+graduated: 2018
 current_location: Melbourne, AU
 link_site: https://haiphan.design/
 link_twitter: haiphan.design

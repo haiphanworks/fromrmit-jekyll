@@ -4,7 +4,9 @@ title: Thân Trọng Hiển
 description: Visual identities and product packaging for a gentle, delicate and refined event planning and design firms.
 categories:
     - Product Designer
-current_location: Melbourne, AU
+    - Animator
+    - Illustrator
+current_location: HCMC, VN
 link_site: https://haiphan.design/
 link_instagram: haiphan.design
 ---
