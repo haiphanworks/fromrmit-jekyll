@@ -1,3 +1,99 @@
 ---
 layout: default
 ---
+
+<!-- Duotone Article Demo -->
+
+<svg xmlns="http://www.w3.org/2000/svg" class="svg-filters">
+    <filter id="duotone_peachypink">
+        <feColorMatrix type="matrix" result="grayscale" values="1 0 0 0 0
+              1 0 0 0 0
+              1 0 0 0 0
+              0 0 0 1 0" />
+
+        <feComponentTransfer color-interpolation-filters="sRGB" result="duotone_magenta_gold">
+            <feFuncR type="table" tableValues="0 1"></feFuncR>
+            <feFuncG type="table" tableValues="0 1"></feFuncG>
+            <feFuncB type="table" tableValues="0 1"></feFuncB>
+            <feFuncA type="table" tableValues="0 1"></feFuncA>
+        </feComponentTransfer>
+    </filter>
+</svg>
+
+<div class="container is-wide">
+    <div class="columns">
+        <div class="column is-3"></div>
+        <div class="column">
+            <div class="directory-wrapper">
+                {% assign directory = site.profiles | sort: 'date' | reverse %}
+                {% for profile in directory %}
+                <div class="card directory-item">
+                    <div class="card-head">
+                        <div class="directory-item-image">
+                            <figure class="image is-full is-cover">
+                                <img src="/assets/profiles/{{ profile.slug }}.jpg" alt="{{ profile.title }}">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4>{{ profile.title }}</h4>
+                        <p class="directory-item-location is-size-7 is-uppercase has-text-darkgray">
+                            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span>{{ profile.current_location }}</span>
+                        </p>
+                        <p class="directory-item-bio">{{ profile.excerpt | strip_html | truncatewords:20 }}</p>
+                        <ul class="directory-item-occupations">
+                            <li>{{ profile.categories | join: '</li><li>'}}</li>
+                        </ul>
+                    </div>
+                    <div class="card-foot">
+                        <div class="directory-item-links">
+                            {% if profile.link_site %}
+                            <a href="{{ profile.link_site }}"><i class="fas fa-globe"></i></a>
+                            {% endif %}
+                            {% if profile.link_facebook %}
+                            <a href="{{ profile.link_facebook }}"><i class="fab fa-facebook"></i></a>
+                            {% endif %}
+                            {% if profile.link_twitter %}
+                            <a href="{{ profile.link_twitter }}"><i class="fab fa-twitter"></i></a>
+                            {% endif %}
+                            {% if profile.link_instagram %}
+                            <a href="{{ profile.link_instagram }}"><i class="fab fa-instagram"></i></a>
+                            {% endif %}
+                            {% if profile.link_behance %}
+                            <a href="{{ profile.link_behance }}"><i class="fab fa-behance"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+                <div class="card directory-item is-skeleton">
+                    <div class="card-head">
+                        <div class="directory-item-image">
+                            <figure class="image skeleton is-full is-cover">
+                                <img src="" alt="">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h4><span class="skeleton is-9"></span></h4>
+                        <p class="directory-item-location is-size-7 is-uppercase has-text-darkgray">
+                            <span class="skeleton is-6"></span>
+                        </p>
+                        <p class="directory-item-bio">
+                            <span class="skeleton"></span>
+                            <span class="skeleton"></span>
+                            <span class="skeleton"></span>
+                            <span class="skeleton is-6"></span>
+                        </p>
+                        <ul class="directory-item-occupations">
+                            <li>{{ profile.categories | join: '</li><li>'}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

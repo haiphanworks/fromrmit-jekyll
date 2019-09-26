@@ -1,0 +1,10 @@
+basic_settings:
+    site_title: Dẫn Truyện
+    favicon_image: /images/favicon.png
+
+menu_settings:
+    menu_items:
+        - title: 'Browse'
+          url: '/browse/'
+        - title: 'Documentation'
+          url: '/documentation/'

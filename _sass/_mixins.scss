@@ -1,0 +1,209 @@
+// BREAKPOINTS
+
+//// SCREEN SIZE
+$viewport-xs: 575px;
+$viewport-sm: 576px;
+$viewport-md: 768px;
+$viewport-lg: 992px;
+$viewport-xl: 1200px;
+
+@mixin breakpoint($class) {
+    @if $class==xs {
+        @media (max-width: $viewport-xs) {
+            @content;
+        }
+    }
+
+    @else if $class==sm {
+        @media (min-width: $viewport-sm) {
+            @content;
+        }
+    }
+
+    @else if $class==md {
+        @media (min-width: $viewport-md) {
+            @content;
+        }
+    }
+
+    @else if $class==lg {
+        @media (min-width: $viewport-lg) {
+            @content;
+        }
+    }
+
+    @else if $class==xl {
+        @media (min-width: $viewport-xl) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+    }
+}
+
+
+// FONTAWESOME
+
+@mixin fontawesome($class) {
+    @if $class==solid {
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 900;
+    }
+
+    @else if $class==regular {
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 400;
+    }
+
+    @else if $class==light {
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 300;
+    }
+
+    @else if $class==brand {
+        font-family: 'Font Awesome 5 Brands';
+    }
+
+    @else {
+        @warn "FontAwesome come in 4 style: solid, regular, light and brand";
+    }
+}
+
+
+// DARKMODE
+
+@mixin darkmode {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
+
+
+// PLACEHOLDER SHIMMER
+
+@mixin shimmer {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: var(--lightgray);
+    background-image: linear-gradient(to right, var(--lightgray) 10%, var(--gray) 50%, var(--lightgray) 90%);
+    background-size: 100vw 50px;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: 0px 0;
+    }
+
+    100% {
+        background-position: 100vw 0;
+    }
+}
+
+
+// PARAGRAPHS SPACING
+
+@mixin content {
+    position: relative;
+    word-break: break-word;
+    hyphens: auto;
+
+    >*:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    a {
+        border-bottom: 1px solid currentColor;
+    }
+
+    ul {
+        padding-left: 1.5em;
+
+        li {
+            &:before {
+                content: "\25A0";
+                vertical-align: text-top;
+                font-size: .75em;
+                color: var(--darkgray);
+                font-weight: bold;
+                display: inline-block;
+                width: 1.5em;
+                margin-left: -1.5em;
+            }
+        }
+    }
+
+    .fa,
+    .fas,
+    .far,
+    .fal,
+    .fab {
+        line-height: inherit;
+    }
+}
+
+
+// SMALLCAPS
+
+@mixin smallcaps {
+    font-family: var(--font-family-sans-serif);
+    font-size: var(--font-size-7);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+}
+
+
+// BOX
+
+@mixin border($side: null) {
+    border-color: var(--border-color);
+    border-style: solid;
+
+    @if $side==top {
+        border-top-width: var(--border-width);
+    }
+
+    @else if $side==right {
+        border-right-width: var(--border-width);
+    }
+
+    @else if $side==bottom {
+        border-bottom-width: var(--border-width);
+    }
+
+    @else if $side==left {
+        border-left-width: var(--border-width);
+    }
+
+    @else if $side==all {
+        border-width: var(--border-width);
+    }
+
+    @else {
+        border-width: var(--border-width);
+    }
+}
+
+@mixin radius {
+    border-radius: var(--border-radius);
+}
+
+@mixin shadow {
+    box-shadow: 0 0 0 1px var(--shadow);
+}
+
+
+// AUTO GRID
+
+@mixin is-auto-grid {
+    display: grid;
+    grid-auto-columns: minmax(min-content, max-content);
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+
+    align-items: center;
+}
