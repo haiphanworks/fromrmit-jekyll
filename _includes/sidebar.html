@@ -9,6 +9,10 @@
     {% include directory/sidebar.html %}
     {% endif %}
 
+    {% if page.layout == "nominate" %}
+    {% include nominate/sidebar.html %}
+    {% endif %}
+
     {% include global/footer.html %}
 
 </div>

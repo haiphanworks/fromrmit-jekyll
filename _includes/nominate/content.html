@@ -1,0 +1,263 @@
+<div class="columns">
+    <div class="column is-6-md has-paragraphs">
+
+        <h3>Nominate</h3>
+
+        <p>FromRMIT is a growing directory of young and bold design and media RMIT students and alumni. You're very
+            welcome to contribute to our list of talented RMITers!</p>
+
+        <p>It's absolutely OK 👌 to nominate yourself, a friend in class or someone you know from school. We're very
+            thankful toward each and every contribution.</p>
+
+        <form id="nominate" name="Nomination Form" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+
+            <div class="field is-hidden">
+                <label class="label">Don’t fill this out if you're human</label>
+                <div class="control">
+                    <input class="input" type="text" name="bot-field" /></label>
+                </div>
+            </div>
+
+            <div class="field is-required">
+                <label class="label">Full Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" required>
+                </div>
+                <p class="help">Full name of nominee</p>
+            </div>
+
+            <div class="field is-required">
+                <label class="label">Biography</label>
+                <div class="control">
+                    <textarea class="textarea" rows="4" name="biography" required></textarea>
+                </div>
+                <p class="help">A short description about the nominee</p>
+            </div>
+
+            <div class="field is-required">
+                <label class="label">Website</label>
+                <p class="help">One link to the nominee's website, portfolio or project ( Include
+                    <strong>https://</strong> or <strong>http://</strong> )
+                </p>
+                <div class="control">
+                    <input class="input" type="text" name="website" required>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="field is-required">
+                        <label class="label">Portrait Photo</label>
+                        <div class="control">
+                            <label for="uploadImage">
+                                <div class="button">Choose image file</div>
+                            </label>
+                            <input type="file" name="photo" id="uploadImage" onchange="loadImageFile();" required>
+                        </div>
+                        <p class="help">Select an image of the nominee (the image will be cropped to a
+                            <strong>square</strong>, <strong>500px</strong> wide)</p>
+                    </div>
+                </div>
+                <div class="column is-narrow">
+                    <img id="originalImg" class="is-hidden" />
+                    <figure class="image is-size-6 is-radius is-bordered is-hidden">
+                        <img id="uploadPreview" />
+                    </figure>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="field is-required">
+                        <label class="label">Location</label>
+                        <div class="control">
+                            <input class="input" type="text" name="location" required>
+                        </div>
+                        <p class="help">Where the nominee reside</p>
+                    </div>
+                </div>
+                <div class="column is-narrow">
+                    <div class="field">
+                        <label class="label is-required">Graduation Year</label>
+                        <div class="control">
+                            <span class="select">
+                                <select name="graduation-year" required>
+                                    <option value="current-student" selected>Current student</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field is-required directory-filter is-nonselectable">
+                <label class="label">Occupation</label>
+                <p class="help">Select up to 3 options</p>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-graphic-designer" value="is-graphic-designer">
+                        <span>💻 Graphic Designer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-illustrator" value="is-illustrator">
+                        <span>🖌 Illustrator</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-web-designer" value="is-web-designer">
+                        <span>🌏 Web Designer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-web-designer" value="is-motion-designer">
+                        <span>🎞 Motion Designer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-art-director" value="is-art-director">
+                        <span>👨‍💼 Art Director</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-animator" value="is-animator">
+                        <span>💃🏼Animator</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-freelancer" value="is-freelancer">
+                        <span>👨‍💻 Freelancer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-3d-artist" value="is-3d-artist">
+                        <span>🗳️ 3D Artist</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-product-designer" value="is-product-designer">
+                        <span>📱 Product Designer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-marketer" value="is-marketer">
+                        <span>💁‍ Marketer</span>
+                    </label>
+                </div>
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox" rel="is-copywriter" value="is-copywriter">
+                        <span>🖋 Copywriter</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Online Presence</label>
+                <p class="help">Include maximum 3 links to the nominee's online profile or project</p>
+                <div class="columns is-xs">
+                    <div class="column is-narrow">
+                        <div class="control">
+                            <span class="select">
+                                <select name="link-01-option">
+                                    <option disabled selected>---</option>
+                                    <option value="is-link-facebook">Facebook</option>
+                                    <option value="is-link-behance">Behance</option>
+                                    <option value="is-link-instagram">Instagram</option>
+                                    <option value="is-link-twitter">Twitter</option>
+                                    <option value="is-link-dribble">Dribble</option>
+                                    <option value="is-link-youtube">Youtube</option>
+                                    <option value="is-link-portfolio">Portfolio</option>
+                                    <option value="is-link-project">Project</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column is-narrow-xs">
+                        <div class="control">
+                            <input class="input" type="text" name="link-01-content">
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-xs">
+                    <div class="column is-narrow">
+                        <div class="control">
+                            <span class="select">
+                                <select name="link-02-option">
+                                    <option disabled selected>---</option>
+                                    <option value="is-link-facebook">Facebook</option>
+                                    <option value="is-link-behance">Behance</option>
+                                    <option value="is-link-instagram">Instagram</option>
+                                    <option value="is-link-twitter">Twitter</option>
+                                    <option value="is-link-dribble">Dribble</option>
+                                    <option value="is-link-youtube">Youtube</option>
+                                    <option value="is-link-portfolio">Portfolio</option>
+                                    <option value="is-link-project">Project</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column is-narrow-xs">
+                        <div class="control">
+                            <input class="input" type="text" name="link-02-content">
+                        </div>
+                    </div>
+                </div>
+                <div class="columns is-xs">
+                    <div class="column is-narrow">
+                        <div class="control">
+                            <span class="select">
+                                <select name="link-03-option">
+                                    <option disabled selected>---</option>
+                                    <option value="is-link-facebook">Facebook</option>
+                                    <option value="is-link-behance">Behance</option>
+                                    <option value="is-link-instagram">Instagram</option>
+                                    <option value="is-link-twitter">Twitter</option>
+                                    <option value="is-link-dribble">Dribble</option>
+                                    <option value="is-link-youtube">Youtube</option>
+                                    <option value="is-link-portfolio">Portfolio</option>
+                                    <option value="is-link-project">Project</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="column is-narrow-xs">
+                        <div class="control">
+                            <input class="input" type="text" name="link-03-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <div data-netlify-recaptcha="true"></div>
+                    <br>
+                </div>
+                <div class="control">
+                    <button class="button is-danger">
+                        <span class="has-text-smallcaps">Submit</span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+        <p class="is-size-7 is-italic">Thank you for your nomination.</p>
+
+
+    </div>
+</div>

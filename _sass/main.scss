@@ -9,6 +9,8 @@
     display: flex;
     flex-direction: column;
 
+    width: 100%;
+
     background-color: var(--white);
     @include border;
     border-radius: var(--border-radius);
@@ -17,6 +19,10 @@
         display: flex;
         flex-shrink: 0;
         width: 100%;
+
+        &.is-left {
+            @include border(right);
+        }
     }
 
     .card-body {
@@ -32,6 +38,34 @@
     }
 }
 
+.columns {
+    margin: 0 calc(0px - (var(--column-gap) / 2));
+
+    +.columns {
+        margin-top: var(--column-gap);
+    }
+}
+
+.column {
+    padding: 0 calc(var(--column-gap) / 2);
+}
+
+.column.is-narrow-xs {
+    width: auto;
+}
+
+.field.is-required {
+    .label {
+        &:after {
+            content: ' *';
+            color: var(--red);
+        }
+    }
+}
+
+#uploadImage {
+    visibility: hidden;
+}
 
 #content {
     padding-bottom: 1rem;
@@ -59,8 +93,9 @@
     }
 
     .logo {
+        orphans: -1;
         margin-top: 3rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 3rem;
 
         img {
             width: 18rem;
@@ -74,22 +109,39 @@
     }
 
     @include breakpoint(md) {
-        width: calc(100% - .5rem);
-        min-height: calc(100vh - .75rem);
-        max-height: calc(100vh - .75rem);
+        width: 100%;
+        padding-right: .5rem;
+        min-height: 100vh;
+        max-height: 100vh;
         overflow: auto;
     }
 
     @include breakpoint(xl) {
-        width: calc(100% - 1.5rem);
+        padding-right: 1.5rem;
     }
+
+    .sidebar-item {
+        order: 1;
+        margin-top: .75rem;
+        margin-bottom: .75rem;
+    }
+
+    .latest-featured {
+        order: 0;
+
+        @include breakpoint(md) {
+            order: 1;
+        }
+    }
+
 }
 
 .sidebar-menu {
     display: none;
-
+    order: 99;
     margin-top: auto;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 3rem;
 
     ul {
         display: flex;
