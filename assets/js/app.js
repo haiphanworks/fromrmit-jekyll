@@ -16,3 +16,5 @@ $(".directory-filter :checkbox").change(function () {
         $(".directory-wrapper > div").show();
     }
 });
+
+lazyload();

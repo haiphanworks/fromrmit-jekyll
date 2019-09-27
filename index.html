@@ -157,6 +157,14 @@ layout: default
                     </div>
                 </div>
 
+                <div class="sidebar-menu has-text-smallcaps">
+                    <ul>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/featured/">Featured</a></li>
+                        <li><a href="/nominate/">Nominate</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
         <div class="column">
@@ -169,7 +177,8 @@ layout: default
                     <div class="card-head">
                         <div class="directory-item-image">
                             <figure class="image is-full is-cover">
-                                <img src="/assets/profiles/{{ profile.slug }}.jpg" alt="{{ profile.title }}">
+                                <img data-src="/assets/profiles/{{ profile.slug }}.jpg" alt="{{ profile.title }}"
+                                    class="lazyload">
                             </figure>
                         </div>
                     </div>
