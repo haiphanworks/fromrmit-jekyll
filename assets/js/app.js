@@ -4,3 +4,15 @@ for (var i = 0; i < cards.length; i++) {
     var target2 = Math.floor(Math.random() * cards.length - 1) + 1;
     cards.eq(target).before(cards.eq(target2));
 }
+
+
+$(".directory-filter :checkbox").change(function () {
+    if ($(".directory-filter :checkbox:checked").length > 0) {
+        $(".directory-item").not('.is-skeleton').hide();
+        $(".directory-filter :checkbox:checked").each(function () {
+            $(".directory-item." + $(this).val()).show();
+        });
+    } else {
+        $(".directory-wrapper > div").show();
+    }
+});

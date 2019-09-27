@@ -107,8 +107,11 @@
 }
 
 .sidebar {
-    display: grid;
-    grid-gap: 1.5rem;
+    display: flex;
+    grid-gap: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
     &.is-sticky {
         top: 0;
@@ -129,17 +132,21 @@
         }
     }
 
-    @include breakpoint(sm) {
-        width: 90%;
+    @include breakpoint(md) {
+        width: calc(100% - .5rem);
+        min-height: calc(100vh - .75rem);
+        max-height: calc(100vh - .75rem);
+        overflow: auto;
     }
 
-    @include breakpoint(md) {
-        max-height: 100vh;
-        overflow: auto;
+    @include breakpoint(xl) {
+        width: calc(100% - 1.5rem);
     }
 }
 
 .directory-filter {
+    margin-bottom: 1.5rem;
+
     .control {
         display: inline-flex;
         margin-bottom: .5rem;
