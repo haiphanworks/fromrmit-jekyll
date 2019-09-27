@@ -1,0 +1,158 @@
+.directory-filter {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+
+    .control {
+        display: inline-flex;
+        margin-bottom: .5rem;
+        margin-right: .25rem;
+
+        .checkbox {
+            position: relative;
+
+            input[type="checkbox"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: none;
+
+                &:checked {
+                    +span {
+                        background-color: var(--red);
+                        color: var(--white);
+                    }
+                }
+            }
+
+            span {
+                @include border;
+                border-radius: var(--border-radius);
+
+                padding: .5rem .75rem;
+
+                background-color: var(--white);
+
+                font-size: var(--font-size-7);
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.directory-wrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+
+    @include breakpoint(md) {
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.directory-item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .card-foot {
+        margin-top: auto;
+    }
+
+    &:hover {
+        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.05);
+
+        .directory-item-image {
+            figure.image {
+                filter: none;
+                transform: scale(1.05);
+                transition: all .5s;
+            }
+        }
+    }
+}
+
+.directory-item-image {
+    position: relative;
+    display: block;
+
+    @include border(bottom);
+
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    figure.image {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        // filter: url('#duotone_peachypink');
+        transition: all 1s;
+    }
+}
+
+.directory-item-location {
+    margin-top: .25rem;
+}
+
+.directory-item-bio {
+    margin-top: .75rem;
+    margin-bottom: 1.75rem;
+}
+
+.directory-item-occupations {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: auto;
+
+    li {
+        font-size: var(--font-size-7);
+        padding-right: 1rem;
+    }
+}
+
+.directory-item-links {
+    display: flex;
+
+    @include border(top);
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: none;
+        width: 100%;
+        padding: 1rem .5rem;
+
+        &:hover {
+            background-color: var(--lightgray);
+        }
+
+        +a {
+            border-left: 1px solid var(--border-color);
+        }
+    }
+}

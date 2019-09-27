@@ -3,22 +3,7 @@
 
 @import 'field';
 
-.navbar {
-    .navbar-logo {
-        img {
-            width: 15rem;
-        }
-    }
-}
-
-.homepage-hero {
-    display: flex;
-    padding-top: 5vw;
-    padding-bottom: 5vw;
-    height: 100vh;
-}
-
-
+@import 'directory';
 
 .card {
     display: flex;
@@ -47,61 +32,20 @@
     }
 }
 
-.column {
-    &.is-3-lg {
-        @include breakpoint(lg) {
-            flex: none;
-            width: calc(100% / 12 * 3);
-        }
+
+#content {
+    padding-bottom: 1rem;
+
+    @include breakpoint(sm) {
+        padding-top: 3rem;
+        padding-bottom: 2.25rem;
+    }
+
+    @include breakpoint(md) {
+        padding-top: 6rem;
     }
 }
 
-
-
-.grid-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    z-index: -1;
-
-    display: flex;
-
-    width: 100%;
-    height: 100%;
-
-    background: transparent;
-
-    padding-left: calc(5vw - 0px);
-    padding-right: calc(5vw - 0px);
-
-    span {
-        display: block;
-        width: 100%;
-
-        border-width: .5px;
-        border-style: solid;
-        border-color: var(--border-color);
-
-        &:first-child {
-            border-left-width: 1px;
-        }
-
-        &:last-child {
-            border-right-width: 1px;
-        }
-
-        &:nth-child(2),
-        &:nth-child(3),
-        &:nth-child(4) {
-            display: none;
-
-            @include breakpoint(lg) {
-                display: block;
-            }
-        }
-    }
-}
 
 .sidebar {
     display: flex;
@@ -141,47 +85,6 @@
     }
 }
 
-.directory-filter {
-    margin-top: .75rem;
-    margin-bottom: .75rem;
-
-    .control {
-        display: inline-flex;
-        margin-bottom: .5rem;
-        margin-right: .25rem;
-
-        .checkbox {
-            position: relative;
-
-            input[type="checkbox"] {
-                position: absolute;
-                top: 0;
-                left: 0;
-                display: none;
-
-                &:checked {
-                    +span {
-                        background-color: var(--red);
-                        color: var(--white);
-                    }
-                }
-            }
-
-            span {
-                @include border;
-                border-radius: 5px;
-
-                padding: .5rem .75rem;
-
-                background-color: var(--white);
-
-                font-size: var(--font-size-7);
-                text-transform: uppercase;
-            }
-        }
-    }
-}
-
 .sidebar-menu {
     display: none;
 
@@ -202,135 +105,16 @@
 }
 
 
-.directory-wrapper {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr;
+form#nominate {
+    margin-top: 3rem;
 
-    padding-top: 0;
-    padding-bottom: .5em;
-
-    @include breakpoint(md) {
-        grid-template-columns: 1fr;
-        grid-gap: 1.5rem;
-
-        padding-top: 6rem;
-        padding-bottom: 2.25rem;
+    .field {
+        margin-bottom: 1.5rem;
     }
 
-    @include breakpoint(lg) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include breakpoint(xl) {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.directory-item {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-
-    .card-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    .card-foot {
-        margin-top: auto;
-    }
-
-    &:hover {
-        box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.05);
-
-        .directory-item-image {
-            figure.image {
-                filter: none;
-                transform: scale(1.05);
-                transition: all .5s;
-            }
+    >.field {
+        &:last-child {
+            margin-top: 3rem;
         }
     }
-}
-
-.directory-item-image {
-    position: relative;
-    display: block;
-
-    @include border(bottom);
-
-    overflow: hidden;
-
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        padding-bottom: 100%;
-    }
-
-    figure.image {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        // filter: url('#duotone_peachypink');
-        transition: all 1s;
-    }
-}
-
-.directory-item-location {
-    margin-top: .25rem;
-}
-
-.directory-item-bio {
-    margin-top: .75rem;
-    margin-bottom: 1.75rem;
-}
-
-.directory-item-occupations {
-    display: flex;
-    flex-wrap: wrap;
-
-    margin-top: auto;
-
-    li {
-        font-size: var(--font-size-7);
-        padding-right: 1rem;
-    }
-}
-
-.directory-item-links {
-    display: flex;
-
-    @include border(top);
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: none;
-        width: 100%;
-        padding: 1rem .5rem;
-
-        &:hover {
-            background-color: var(--lightgray);
-        }
-
-        +a {
-            border-left: 1px solid var(--border-color);
-        }
-    }
-}
-
-.svg-filters {
-    height: 0;
-    left: -9999em;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    width: 0;
 }

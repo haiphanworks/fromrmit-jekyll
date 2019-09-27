@@ -1,0 +1,14 @@
+<div class="sidebar is-sticky">
+
+    <a class="logo is-nonselectable" href="/">
+        <img src="/assets/images/fromrmit_logo_red.svg" width="270px" height="54px">
+        <p class="is-size-7">RMIT Vietnam Design and Media Student Directory</p>
+    </a>
+
+    {% if page.layout == "directory" %}
+    {% include directory/sidebar.html %}
+    {% endif %}
+
+    {% include global/footer.html %}
+
+</div>

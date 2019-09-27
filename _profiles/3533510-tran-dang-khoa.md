@@ -8,9 +8,8 @@ categories:
     - Illustrator
 graduated: 2018
 current_location: Melbourne, AU
-link_site: https://haiphan.design/
-link_twitter: haiphan.design
-link_instagram: haiphan.design
+link_site: https://instagram.com/yourdreamk/
+link_instagram: yourdreamk
 ---
 
 Magna no labore eirmod diam sed magna nonumy. Duo eirmod diam elitr voluptua gubergren, aliquyam et dolores eirmod duo dolores.

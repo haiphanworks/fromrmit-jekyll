@@ -18,3 +18,9 @@ $(".directory-filter :checkbox").change(function () {
 });
 
 lazyload();
+
+$('#nominate .directory-filter input[type=checkbox]').on('change', function (e) {
+    if ($('input[type=checkbox]:checked').length > 3) {
+        $(this).prop('checked', false);
+    }
+});

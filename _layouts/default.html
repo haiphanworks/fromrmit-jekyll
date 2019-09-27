@@ -6,19 +6,28 @@
 <body>
 
     <div id="main">
-        {{ content }}
+
+        <div class="container is-wide">
+
+            <div class="columns">
+
+                <div id="sidebar" class="column is-3-xl is-4-lg is-5-md">
+                    {% include sidebar.html %}
+                </div>
+
+                <div id="content" class="column">
+                    {{ content }}
+                    {% include global/footer-mobile.html %}
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <!-- <div class="grid-background">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div> -->
-
     {% include javascript.html %}
+
 </body>
 
 </html>
