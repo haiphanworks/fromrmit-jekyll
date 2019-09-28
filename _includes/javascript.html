@@ -1,3 +1,11 @@
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/lazyload.js"></script>
 <script src="/assets/js/app.js"></script>
+
+{% if page.layout == "featured-single" %}
+<script>
+    $(document).ready(function () {
+        $('p').has('img').addClass('has-image');
+    });
+</script>
+{% endif %}

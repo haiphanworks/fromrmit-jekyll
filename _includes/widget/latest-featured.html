@@ -2,17 +2,21 @@
 
     <h6 class="has-text-smallcaps">Latest Featured</h6>
 
-    <div class="card is-horizontal">
-        <div class="card-media is-left">
-            <figure class="image is-full is-cover is-cover">
-                <img src="/assets/upload/featured.jpg" alt="">
-            </figure>
+    {% assign latestfeatured = site.featured | reverse %}
+    {% for featured in latestfeatured limit:1 %}
+    <a href="{{ featured.url }}">
+        <div class="card is-horizontal">
+            <div class="card-media is-left">
+                <figure class="image is-full is-cover is-cover">
+                    <img src="/assets/upload/featured.jpg" alt="">
+                </figure>
+            </div>
+            <div class="card-body has-paragraphs">
+                <h6 style="margin-bottom: .5rem;">{{ featured.title }}</h6>
+                <p class="is-size-7">{{ featured.description }}</p>
+            </div>
         </div>
-        <div class="card-body has-paragraphs">
-            <h6 style="margin-bottom: .5rem;">Toxic Rat Is Going To Be Your Next Source of Positivity</h6>
-            <p class="is-size-7">FromRMIT talked to Hien, founder of Toxic Rat, about his upcoming trip to Singapore
-                Comic-Con.</p>
-        </div>
-    </div>
+    </a>
+    {% endfor %}
 
 </div>

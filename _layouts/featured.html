@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="columns">
+    <div class="column is-6-md">
+
+        <div class="page-header">
+            <h3>Featured</h3>
+        </div>
+
+        {% assign latestfeatured = site.featured | reverse %}
+        {% for featured in latestfeatured limit:1 %}
+        <a href="{{ featured.url }}">
+            <div class="featured-item">
+                <div class="featured-item-image">
+                    <figure class="image is-full is-cover is-cover is-radius is-bordered">
+                        <img src="{{ featured.featuredimage }}" alt="">
+                    </figure>
+                </div>
+                <div class="featured-item-meta">
+                    <h5>{{ featured.title }}</h5>
+                    <p class="has-text-darkgray">{{ featured.description }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+</div>

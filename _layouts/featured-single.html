@@ -1,0 +1,93 @@
+---
+layout: default
+---
+
+{% if page.featuring %}
+{% assign featuring = site.profiles | where:"slug", page.featuring  | first %}
+{% endif %}
+
+<div class="featured-single-cover">
+    <div class="columns">
+        <div class="column is-9-md">
+            <figure class="image is-radius is-bordered">
+                <img src="{{ page.coverimage }}" alt="">
+            </figure>
+        </div>
+    </div>
+</div>
+
+<div class="featured-single-meta">
+    <div class="columns">
+        <div class="column is-6-md">
+            <div class="has-paragraphs">
+
+                <h1>{{ page.title }}</h1>
+                <h4 class="has-text-darkgray">{{ page.description }}</h4>
+
+                {% if page.featuring %}
+                <div class="featured-single-featuring">
+
+                    <div class="help">Featuring</div>
+
+                    <a href="{{ featuring.url }}">
+                        <div class="columns is-xs">
+                            <div class="column is-narrow">
+                                <div class="featuring-image">
+                                    <figure class="image is-size-4 is-cover is-cover is-rounded">
+                                        <img data-src="/assets/profiles/{{ featuring.slug }}.jpg"
+                                            alt="{{ profile.title }}" class="lazyload" width="60px" height="60px">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="featuring-meta">
+                                    <h6>{{ featuring.title }}</h6>
+                                    <p class="is-size-7 has-text-darkgray">
+                                        {% if featuring.graduated %}
+                                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                                        <span>{{ featuring.graduated }}</span>&nbsp;&nbsp;-&nbsp;
+                                        {% endif %}
+                                        <span class="icon"><i class="fas fa-pencil-ruler"></i></span>
+                                        <span>{{ featuring.categories | join: ', ' }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="featured-single-content">
+    <div class="columns">
+        <div class="column is-6-md">
+            <div class="has-paragraphs">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="featured-single-footer">
+    <div class="columns">
+        <div class="column is-3-md has-paragraphs">
+            <h6>About FromRMIT</h6>
+            <p>FromRMIT is a directory of RMIT University Vietnam students and alumni in Design and Media department or
+                whomever originated from RMIT that is currently working in the design and media industry.</p>
+        </div>
+        <div class="column is-3-md has-paragraphs">
+            <h6>What is Featured?</h6>
+            <p>Featured showcase many of our best in a biweekly series where we interviewing people who originate from
+                RMIT University Vietnam or featuring their creative works.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+
+</div>
