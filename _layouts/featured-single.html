@@ -29,31 +29,29 @@ layout: default
 
                     <div class="help">Featuring</div>
 
-                    <a href="{{ featuring.url }}">
-                        <div class="columns is-xs">
-                            <div class="column is-narrow">
-                                <div class="featuring-image">
-                                    <figure class="image is-size-4 is-cover is-cover is-rounded">
-                                        <img data-src="/assets/profiles/{{ featuring.slug }}.jpg"
-                                            alt="{{ profile.title }}" class="lazyload" width="60px" height="60px">
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="column">
-                                <div class="featuring-meta">
-                                    <h6>{{ featuring.title }}</h6>
-                                    <p class="is-size-7 has-text-darkgray">
-                                        {% if featuring.graduated %}
-                                        <span class="icon"><i class="fas fa-graduation-cap"></i></span>
-                                        <span>{{ featuring.graduated }}</span>&nbsp;&nbsp;-&nbsp;
-                                        {% endif %}
-                                        <span class="icon"><i class="fas fa-pencil-ruler"></i></span>
-                                        <span>{{ featuring.categories | join: ', ' }}</span>
-                                    </p>
-                                </div>
+                    <div class="columns is-xs">
+                        <div class="column is-narrow">
+                            <div class="featuring-image">
+                                <figure class="image is-size-4 is-cover is-cover is-rounded">
+                                    <img data-src="/assets/profiles/{{ featuring.slug }}.jpg" alt="{{ profile.title }}"
+                                        class="lazyload" width="60px" height="60px">
+                                </figure>
                             </div>
                         </div>
-                    </a>
+                        <div class="column">
+                            <div class="featuring-meta">
+                                <h6>{{ featuring.title }}</h6>
+                                <p class="is-size-7 has-text-darkgray">
+                                    {% if featuring.graduated %}
+                                    <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+                                    <span>{{ featuring.graduated }}</span>&nbsp;&nbsp;-&nbsp;
+                                    {% endif %}
+                                    <span class="icon"><i class="fas fa-pencil-ruler"></i></span>
+                                    <span>{{ featuring.categories | join: ', ' }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 {% endif %}

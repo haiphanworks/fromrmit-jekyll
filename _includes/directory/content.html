@@ -5,7 +5,7 @@
     <div
         class="card directory-item is-{{ profile.categories | join: '_is-' | replace: ' ', '-' | replace: '_', ' ' | downcase }} is-{% if profile.graduated %}{{ profile.graduated }}{% else %}current-student{% endif %}">
         <div class="card-head">
-            <a class="directory-item-image" href="{{ profile.url }}">
+            <a class="directory-item-image">
                 <figure class="image is-full is-cover">
                     <img data-src="/assets/profiles/{{ profile.slug }}.jpg" alt="{{ profile.title }}" class="lazyload"
                         width="500px" height="500px">
@@ -13,9 +13,7 @@
             </a>
         </div>
         <div class="card-body">
-            <a href="{{ profile.url }}">
-                <h4>{{ profile.title }}</h4>
-            </a>
+            <h4>{{ profile.title }}</h4>
             <p class="directory-item-location is-size-7 is-uppercase has-text-darkgray">
                 {% if profile.graduated %}
                 <span class="icon"><i class="fas fa-graduation-cap"></i></span>

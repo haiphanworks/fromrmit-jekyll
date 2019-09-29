@@ -5,6 +5,7 @@ description: Visual identities and product packaging for a gentle, delicate and 
 categories:
     - Graphic Designer
     - Illustrator
+graduated: 2018
 current_location: Melbourne, AU
 link_site: https://yuureistudio.com/
 link_instagram: tri.nmn
