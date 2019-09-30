@@ -52,7 +52,8 @@
                             <label for="uploadImage">
                                 <div class="button">Choose image file</div>
                             </label>
-                            <input type="file" name="photo" id="uploadImage" onchange="loadImageFile();" required>
+                            <input type="file" id="uploadImage" onchange="loadImageFile();" required>
+                            <textarea name="photo" id="imageBase64" class="textarea is-hidden" required></textarea>
                         </div>
                         <p class="help">Select an image of the nominee (the image will be cropped to a
                             <strong>square</strong>, <strong>500px</strong> wide)</p>

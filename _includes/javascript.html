@@ -1,5 +1,10 @@
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/js/lazyload.js"></script>
+
+{% if page.layout == "nominate" %}
+<script src="https://unpkg.com/@agilie/canvas-image-cover-position"></script>
+{% endif %}
+
 <script src="/assets/js/app.js"></script>
 
 {% if page.layout == "featured-single" %}
