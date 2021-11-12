@@ -1,3 +1,5 @@
+@import 'reset';
+
 @import 'mixins';
 @import 'configs';
 
@@ -6,322 +8,316 @@
 @import 'directory';
 @import 'featured';
 
-#main>.container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+#main > .container {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 
-    @include breakpoint(lg) {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
+	@include breakpoint(lg) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
 }
 
 .rmit-background {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 5rem;
-    z-index: -1;
-    height: 10vh;
-    width: auto;
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 5rem;
+	z-index: -1;
+	height: 10vh;
+	width: auto;
 
-    @include breakpoint(md) {
-        display: block;
-    }
+	@include breakpoint(md) {
+		display: block;
+	}
 }
 
 .page-header {
-    margin-bottom: 3rem;
+	margin-bottom: 3rem;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    width: 100%;
+	width: 100%;
 
-    background-color: var(--white);
-    @include border;
-    border-radius: var(--border-radius);
+	background-color: var(--white);
+	@include border;
+	border-radius: var(--border-radius);
 
-    .card-media {
-        display: flex;
-        flex-shrink: 0;
-        width: 100%;
+	.card-media {
+		display: flex;
+		flex-shrink: 0;
+		width: 100%;
 
-        &.is-left {
-            @include border(right);
+		&.is-left {
+			@include border(right);
 
-            figure.image {
-                border-top-left-radius: var(--border-radius);
-                border-bottom-left-radius: var(--border-radius);
-            }
-        }
-    }
+			figure.image {
+				border-top-left-radius: var(--border-radius);
+				border-bottom-left-radius: var(--border-radius);
+			}
+		}
+	}
 
-    .card-body {
-        padding: 1rem;
-    }
+	.card-body {
+		padding: 1rem;
+	}
 
-    &.is-horizontal {
-        flex-direction: row;
+	&.is-horizontal {
+		flex-direction: row;
 
-        .card-media {
-            width: calc(100% / 3);
+		.card-media {
+			width: calc(100% / 3);
 
-            @include breakpoint(sm) {
-                width: calc(100% / 4);
-            }
-        }
-    }
+			@include breakpoint(sm) {
+				width: calc(100% / 4);
+			}
+		}
+	}
 }
 
 .column.is-narrow-xs {
-    width: auto;
+	width: auto;
 }
 
 .field.is-required {
-    .label {
-        &:after {
-            content: ' *';
-            color: var(--red);
-        }
-    }
+	.label {
+		&:after {
+			content: ' *';
+			color: var(--red);
+		}
+	}
 }
 
-
-
 #content {
-    padding-bottom: 1rem;
+	padding-bottom: 1rem;
 
-    @include breakpoint(sm) {
-        padding-top: 3rem;
-        padding-bottom: 2.25rem;
-    }
+	@include breakpoint(sm) {
+		padding-top: 3rem;
+		padding-bottom: 2.25rem;
+	}
 
-    @include breakpoint(md) {
-        padding-top: 6rem;
-    }
+	@include breakpoint(md) {
+		padding-top: 6rem;
+	}
 }
 
 .menu-mobile {
-    position: fixed;
-    top: -100vh;
-    right: 0;
-    z-index: 999;
+	position: fixed;
+	top: -100vh;
+	right: 0;
+	z-index: 999;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 
-    padding: 1.5rem;
+	padding: 1.5rem;
 
-    background-color: var(--black);
+	background-color: var(--black);
 
-    color: var(--white);
+	color: var(--white);
 
-    transition: all .25s linear;
+	transition: all 0.25s linear;
 
-    // opacity: .5;
+	// opacity: .5;
 
-    .logo {
-        orphans: -1;
-        margin-top: 2rem;
-        margin-bottom: 3rem;
+	.logo {
+		orphans: -1;
+		margin-top: 2rem;
+		margin-bottom: 3rem;
 
-        img {
-            width: 18rem;
-            margin-bottom: .5rem;
-        }
+		img {
+			width: 18rem;
+			margin-bottom: 0.5rem;
+		}
 
-        @include breakpoint(md) {
-            margin-top: 9rem;
-            margin-bottom: 3rem;
-        }
-    }
+		@include breakpoint(md) {
+			margin-top: 9rem;
+			margin-bottom: 3rem;
+		}
+	}
 
-    .menu-mobile-toggle {
-        position: absolute;
-        top: 3.5rem;
-        right: 1.5rem;
+	.menu-mobile-toggle {
+		position: absolute;
+		top: 3.5rem;
+		right: 1.5rem;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
-        width: 3rem;
-        height: 3rem;
+		width: 3rem;
+		height: 3rem;
 
-        cursor: pointer;
-    }
+		cursor: pointer;
+	}
 
-    ul {
-        display: grid;
-        grid-gap: 1rem;
+	ul {
+		display: grid;
+		grid-gap: 1rem;
 
-        li {
-            font-size: var(--font-size-2);
-            font-weight: var(--font-weight-bold);
-            text-transform: uppercase;
-        }
-    }
+		li {
+			font-size: var(--font-size-2);
+			font-weight: var(--font-weight-bold);
+			text-transform: uppercase;
+		}
+	}
 
-    .latest-featured {
-        margin-top: auto;
+	.latest-featured {
+		margin-top: auto;
 
-        .card {
-            max-width: 30rem;
-        }
-    }
+		.card {
+			max-width: 30rem;
+		}
+	}
 
-    .card {
-        border-color: var(--darkblack);
-        background-color: var(--lightblack);
+	.card {
+		border-color: var(--darkblack);
+		background-color: var(--lightblack);
 
-        .card-media {
-            border-color: var(--darkblack);
-        }
-    }
+		.card-media {
+			border-color: var(--darkblack);
+		}
+	}
 
-    &.is-active {
-        top: 0;
-    }
+	&.is-active {
+		top: 0;
+	}
 }
 
-
 .sidebar {
-    display: flex;
-    grid-gap: 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+	display: flex;
+	grid-gap: 0;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
 
-    &.is-sticky {
-        top: 0;
-    }
+	&.is-sticky {
+		top: 0;
+	}
 
-    .logo {
-        orphans: -1;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+	.logo {
+		orphans: -1;
+		margin-top: 3rem;
+		margin-bottom: 3rem;
 
-        img {
-            width: 18rem;
-            margin-bottom: .5rem;
-        }
+		img {
+			width: 18rem;
+			margin-bottom: 0.5rem;
+		}
 
-        @include breakpoint(md) {
-            margin-top: 9rem;
-            margin-bottom: 3rem;
-        }
-    }
+		@include breakpoint(md) {
+			margin-top: 9rem;
+			margin-bottom: 3rem;
+		}
+	}
 
-    @include breakpoint(md) {
-        width: 100%;
-        padding-right: .5rem;
-        min-height: 100vh;
-        max-height: 100vh;
-        overflow: auto;
-    }
+	@include breakpoint(md) {
+		width: 100%;
+		padding-right: 0.5rem;
+		min-height: 100vh;
+		max-height: 100vh;
+		overflow: auto;
+	}
 
-    @include breakpoint(xl) {
-        padding-right: 3rem;
-    }
+	@include breakpoint(xl) {
+		padding-right: 3rem;
+	}
 
-    .sidebar-item {
-        order: 1;
-        margin-bottom: 1.5rem;
-    }
+	.sidebar-item {
+		order: 1;
+		margin-bottom: 1.5rem;
+	}
 
-    .latest-featured {
-        order: 0;
-        margin-bottom: 3rem;
+	.latest-featured {
+		order: 0;
+		margin-bottom: 3rem;
 
-        @include breakpoint(md) {
-            order: 1;
-            margin-bottom: inherit;
-        }
-    }
-
+		@include breakpoint(md) {
+			order: 1;
+			margin-bottom: inherit;
+		}
+	}
 }
 
 .sidebar-toggle {
-    position: absolute;
-    top: 3.5rem;
-    right: .5rem;
+	position: absolute;
+	top: 3.5rem;
+	right: 0.5rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 
-    width: 3rem;
-    height: 3rem;
+	width: 3rem;
+	height: 3rem;
 
-    cursor: pointer;
+	cursor: pointer;
 
-    &:empty {
+	&:empty {
+		&:before,
+		&:after {
+			content: '';
+			display: block;
 
-        &:before,
-        &:after {
-            content: '';
-            display: block;
+			width: 1.5rem;
+			height: 1.5px;
 
-            width: 1.5rem;
-            height: 1.5px;
+			margin: 0.25rem 0;
 
-            margin: .25rem 0;
+			background-color: var(--black);
+		}
+	}
 
-            background-color: var(--black);
-        }
-    }
-
-    @include breakpoint(md) {
-        display: none;
-    }
+	@include breakpoint(md) {
+		display: none;
+	}
 }
 
 .sidebar-menu {
-    display: none;
-    order: 99;
-    margin-top: auto;
-    padding-bottom: 3rem;
-    padding-top: 3rem;
+	display: none;
+	order: 99;
+	margin-top: auto;
+	padding-bottom: 3rem;
+	padding-top: 3rem;
 
-    ul {
-        display: flex;
+	ul {
+		display: flex;
 
-        li {
-            padding-right: 1.5rem;
-        }
-    }
+		li {
+			padding-right: 1.5rem;
+		}
+	}
 
-    @include breakpoint(md) {
-        display: initial;
-    }
+	@include breakpoint(md) {
+		display: initial;
+	}
 }
 
-
 form#nominate {
-    margin-top: 3rem;
+	margin-top: 3rem;
 
-    .field {
-        margin-bottom: 1.5rem;
-    }
+	.field {
+		margin-bottom: 1.5rem;
+	}
 
-    >.field {
-        &:last-child {
-            margin-top: 3rem;
-        }
-    }
+	> .field {
+		&:last-child {
+			margin-top: 3rem;
+		}
+	}
 
-    #uploadImage {
-        -webkit-appearance: none;
-        visibility: hidden;
-        width: 0;
-        height: 0;
-    }
+	#uploadImage {
+		-webkit-appearance: none;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
 }
