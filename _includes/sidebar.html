@@ -5,9 +5,7 @@
         <p class="is-size-7">RMIT Vietnam Design and Media Student Directory</p>
     </a>
 
-    <div class="sidebar-toggle">
-        <span class="icon">🍔</span>
-    </div>
+    <div class="sidebar-toggle"></div>
 
     {% if page.layout == "directory" %}
     {% include directory/sidebar.html %}
@@ -15,10 +13,6 @@
 
     {% if page.layout == "nominate" %}
     {% include nominate/sidebar.html %}
-    {% endif %}
-
-    {% if page.layout == "about" %}
-    {% include about/sidebar.html %}
     {% endif %}
 
     {% include global/footer.html %}

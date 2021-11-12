@@ -1,13 +1,9 @@
-// ONLOAD
-
 window.onload = function () {
     loadImageFile();
 }
 
 
-// RANDOMIZE CARD ONLOAD
-
-var cards = $(".directory-item").not('.is-skeleton').not('.is-empty');
+var cards = $(".directory-item").not('.is-skeleton');
 for (var i = 0; i < cards.length; i++) {
     var target = Math.floor(Math.random() * cards.length - 1) + 1;
     var target2 = Math.floor(Math.random() * cards.length - 1) + 1;
@@ -15,31 +11,18 @@ for (var i = 0; i < cards.length; i++) {
 }
 
 
-// DIRECTORY FILTER
-
 $(".directory-filter :checkbox").change(function () {
     if ($(".directory-filter :checkbox:checked").length > 0) {
         $(".directory-item").not('.is-skeleton').hide();
         $(".directory-filter :checkbox:checked").each(function () {
             $(".directory-item." + $(this).val()).show();
         });
-        if ($('.directory-item:visible').length > 0) {
-            $(".directory-item.is-empty").hide();
-        } else {
-            $(".directory-item.is-empty").show();
-        }
     } else {
         $(".directory-wrapper > div").show();
-        $(".directory-item.is-empty").hide();
     }
 });
 
-
-// LAZYLOADING
-
 lazyload();
-
-// LIMIT NOMINEE OCCUPATION TO 3
 
 $('#nominate .directory-filter input[type=checkbox]').on('change', function (e) {
     if ($('input[type=checkbox]:checked').length > 3) {
@@ -48,12 +31,17 @@ $('#nominate .directory-filter input[type=checkbox]').on('change', function (e) 
 });
 
 
+<<<<<<< HEAD
 // CANVAS IMAGE UPLOAD
 
 
 
 var oFReader = new FileReader();
 var rFilter = /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+=======
+oFReader = new FileReader(), rFilter =
+    /^(?:image\/bmp|image\/cis\-cod|image\/gif|image\/ief|image\/jpeg|image\/jpeg|image\/jpeg|image\/pipeg|image\/png|image\/svg\+xml|image\/tiff|image\/x\-cmu\-raster|image\/x\-cmx|image\/x\-icon|image\/x\-portable\-anymap|image\/x\-portable\-bitmap|image\/x\-portable\-graymap|image\/x\-portable\-pixmap|image\/x\-rgb|image\/x\-xbitmap|image\/x\-xpixmap|image\/x\-xwindowdump)$/i;
+>>>>>>> parent of 103c8cc (Alpha)
 
 oFReader.onload = function (oFREvent) {
     var img = new Image();
@@ -112,11 +100,3 @@ function loadImageFile() {
     }
     oFReader.readAsDataURL(oFile);
 }
-
-// MENU TOGGLE
-$('.sidebar-toggle').click(function () {
-    $('.menu-mobile').addClass('is-active');
-})
-$('.menu-mobile-toggle').click(function () {
-    $('.menu-mobile').removeClass('is-active');
-})

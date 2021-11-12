@@ -6,6 +6,7 @@
 @import 'field';
 
 @import 'directory';
+<<<<<<< HEAD
 @import 'featured';
 
 #main > .container {
@@ -35,6 +36,8 @@
 .page-header {
 	margin-bottom: 3rem;
 }
+=======
+>>>>>>> parent of 103c8cc (Alpha)
 
 .card {
 	display: flex;
@@ -51,6 +54,7 @@
 		flex-shrink: 0;
 		width: 100%;
 
+<<<<<<< HEAD
 		&.is-left {
 			@include border(right);
 
@@ -60,6 +64,12 @@
 			}
 		}
 	}
+=======
+        &.is-left {
+            @include border(right);
+        }
+    }
+>>>>>>> parent of 103c8cc (Alpha)
 
 	.card-body {
 		padding: 1rem;
@@ -68,6 +78,7 @@
 	&.is-horizontal {
 		flex-direction: row;
 
+<<<<<<< HEAD
 		.card-media {
 			width: calc(100% / 3);
 
@@ -76,6 +87,12 @@
 			}
 		}
 	}
+=======
+        .card-media {
+            width: calc(100% / 3);
+        }
+    }
+>>>>>>> parent of 103c8cc (Alpha)
 }
 
 .column.is-narrow-xs {
@@ -91,6 +108,13 @@
 	}
 }
 
+<<<<<<< HEAD
+=======
+#uploadImage {
+    visibility: hidden;
+}
+
+>>>>>>> parent of 103c8cc (Alpha)
 #content {
 	padding-bottom: 1rem;
 
@@ -104,6 +128,7 @@
 	}
 }
 
+<<<<<<< HEAD
 .menu-mobile {
 	position: fixed;
 	top: -100vh;
@@ -279,6 +304,88 @@
 	@include breakpoint(md) {
 		display: none;
 	}
+=======
+
+.sidebar {
+    display: flex;
+    grid-gap: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &.is-sticky {
+        top: 0;
+    }
+
+    .logo {
+        orphans: -1;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        img {
+            width: 18rem;
+            margin-bottom: .5rem;
+        }
+
+        @include breakpoint(md) {
+            margin-top: 9rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @include breakpoint(md) {
+        width: 100%;
+        padding-right: .5rem;
+        min-height: 100vh;
+        max-height: 100vh;
+        overflow: auto;
+    }
+
+    @include breakpoint(xl) {
+        padding-right: 1.5rem;
+    }
+
+    .sidebar-item {
+        order: 1;
+        margin-top: .75rem;
+        margin-bottom: .75rem;
+    }
+
+    .latest-featured {
+        order: 0;
+
+        @include breakpoint(md) {
+            order: 1;
+        }
+    }
+
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 1.5rem;
+    height: 3rem;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+
+        width: 100%;
+        height: 2px;
+
+        margin: .25rem 0;
+
+        background-color: var(--black);
+    }
+>>>>>>> parent of 103c8cc (Alpha)
 }
 
 .sidebar-menu {
@@ -302,6 +409,7 @@
 }
 
 form#nominate {
+<<<<<<< HEAD
 	margin-top: 3rem;
 
 	.field {
@@ -321,3 +429,17 @@ form#nominate {
 		height: 0;
 	}
 }
+=======
+    margin-top: 3rem;
+
+    .field {
+        margin-bottom: 1.5rem;
+    }
+
+    >.field {
+        &:last-child {
+            margin-top: 3rem;
+        }
+    }
+}
+>>>>>>> parent of 103c8cc (Alpha)
